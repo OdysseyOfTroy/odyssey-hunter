@@ -5,8 +5,7 @@ services:
     build:
       context: './frontend'
     volumes:
-      - /app/node_modules
-      - ./frontend:/src
+      - ./frontend:/app
     ports:
       - 3000:3000
 
