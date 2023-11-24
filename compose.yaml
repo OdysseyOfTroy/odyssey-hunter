@@ -9,11 +9,34 @@ services:
     ports:
       - 3000:3000
 
-  express-api:
-    build:
-      context: './server'
-    volumes:
-      - /app/node_modules
-      - ./server:/app
+  postgres: 
+    container_name: postgres
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
-      - 4000:4000
+      - 5432:5432
+    
+  redis:
+    container_name: redis
+    image: redis:6-alpine
+    ports:
+      - 6379:6379
+
+  backend:
+    depends_on:
+      - postgres
+      - redis
+    build: 
+      context: './backend'
+      target: dependencies
+    ports:
+        - 3033:3033
+        - 9229:9229
+    environment: 
+        - PG_HOST=postgres
+        - REDIS_HOST=redis
+    volumes:
+        - ./:/home/node.app
+    command: dumb-init node ace serve --watch --node-args="--inspect=0.0.0.0"
