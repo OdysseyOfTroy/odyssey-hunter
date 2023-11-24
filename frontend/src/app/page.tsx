@@ -14,9 +14,9 @@ export default function Home() {
           />
         </div>
 
-        <div className="flex flex-col w-full h-full text-center sm:py-48 lg:flex-1 lg:flex-row lg:py-0 lg:w-full lg:mb-0 lg:grid-cols-4 lg:h-auto lg:justify-between">
+        <div className="flex flex-col w-full h-full text-center lg:flex-1 lg:flex-row">
           <a
-            className="flex-grow items-center group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 "
+            className="flex flex-grow justify-center items-center group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 "
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -26,11 +26,10 @@ export default function Home() {
                 -&gt;
               </span>
             </h2>
-
           </a>
 
           <a
-            className="flex-grow group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="flex flex-grow justify-center items-center group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -43,7 +42,7 @@ export default function Home() {
           </a>
 
           <a
-            className="flex-grow group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="flex flex-grow justify-center items-center group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             target="_blank"
             rel="noopener noreferrer"
           >
