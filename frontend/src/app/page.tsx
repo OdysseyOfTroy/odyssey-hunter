@@ -16,9 +16,9 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col w-full h-full text-center lg:flex-1 lg:flex-row">
-          <LandingContainer target="_blank" text='Monsters'/>
-          <LandingContainer target='_blank' text="Equipment"/>
-          <LandingContainer target="_blank" text="Items"/>
+          <LandingContainer target="/monsters" text='Monsters'/>
+          <LandingContainer text="Equipment"/>
+          <LandingContainer text="Items"/>
         </div>
       </div>
     </main>
