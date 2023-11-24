@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import LandingContainer from '../components/LandingContainer'
 
 export default function Home() {
   return (
@@ -15,44 +16,9 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col w-full h-full text-center lg:flex-1 lg:flex-row">
-          <a
-            className="flex flex-grow justify-center items-center group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className="text-2xl font-semibold">
-              Monsters{' '}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-          </a>
-
-          <a
-            className="flex flex-grow justify-center items-center group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={`text-2xl font-semibold`}>
-              Equipment{' '}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-          </a>
-
-          <a
-            className="flex flex-grow justify-center items-center group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={`text-2xl font-semibold`}>
-              Items{' '}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-          </a>
+          <LandingContainer target="_blank" text='Monsters'/>
+          <LandingContainer target='_blank' text="Equipment"/>
+          <LandingContainer target="_blank" text="Items"/>
         </div>
       </div>
     </main>
