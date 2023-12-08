@@ -1,8 +1,9 @@
-import Image from 'next/image'
-import LandingContainer from '@/components/LandingContainer'
+import MonsterList from './monsterList'
 
-export default function Monsters() {
+export default async function Monsters() {
   return (
-<p> Under Construction </p>
+    <div>
+      <MonsterList />
+    </div>
   )
 }

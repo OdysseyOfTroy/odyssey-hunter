@@ -25,10 +25,15 @@ Route.get('health', async ({ response }) => {
   const report = await HealthCheck.getReport()
 
   return report.healthy
-  ? response.ok(report)
-  : response.badRequest(report)
+    ? response.ok(report)
+    : response.badRequest(report)
 })
 
 Route.get('/', async () => {
   return { hello: 'world' }
+})
+
+Route.group(() => {
+  Route.get('/monsters', "MonstersController.index");
+  Route.get('/monsters/:id', "MonstersController.show");
 })

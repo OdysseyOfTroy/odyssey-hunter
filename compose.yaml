@@ -8,13 +8,18 @@ services:
       - ./frontend:/app
     ports:
       - 3000:3000
+    network_mode: "host"
 
   postgres: 
     container_name: postgres
     image: postgres:13
+    volumes:
+      - /data/postgresql:/var/lib/postgresql
+      - /data/postgresql/data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data
     ports:
       - 5432:5432
     
@@ -32,7 +37,7 @@ services:
       context: './backend'
       target: dependencies
     ports:
-        - 3033:3033
+        - ${PORT}:${PORT}
         - 9229:9229
     environment: 
         - PG_HOST=postgres
@@ -40,3 +45,6 @@ services:
     volumes:
         - ./:/home/node.app
     command: dumb-init node ace serve --watch --node-args="--inspect=0.0.0.0"
+
+volumes:
+  postgres_volume:
